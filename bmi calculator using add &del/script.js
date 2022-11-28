@@ -46,8 +46,6 @@ function insertNewRecord(data) {
     cell5 = newRow.insertCell(5); 
     cell5.innerHTML = `<button onClick="onEdit(this)">Edit</button>
                        <button onClick="onDelete(this)">Delete</button>`;
-        
-    //    calculation(); 
 }
 
 function resetForm() {
@@ -55,7 +53,6 @@ function resetForm() {
     document.getElementById("Age").value = "";
     document.getElementById("Height").value = "";
     document.getElementById("Weight").value = "";
-    bmi = "";
     selectedRow = null;
 }
 
@@ -65,24 +62,26 @@ function onEdit(td) {
     document.getElementById("Age").value = selectedRow.cells[1].innerHTML;
     document.getElementById("Height").value = selectedRow.cells[2].innerHTML;
     document.getElementById("Weight").value = selectedRow.cells[3].innerHTML;
-    bmi = selectedRow.cells[4].innerHTML;
+
 }
 function updateRecord(formData) {
     selectedRow.cells[0].innerHTML = formData.fullName;
     selectedRow.cells[1].innerHTML = formData.Age;
     selectedRow.cells[2].innerHTML = formData.Height;
     selectedRow.cells[3].innerHTML = formData.Weight;
+    var height=document.getElementById("Height").value;
+    var weight=document.getElementById("Weight").value;
+    var bmi=weight/(height*height)*10000;
     selectedRow.cells[4].innerHTML = bmi;
 }
 
 function onDelete(td) {
-    // if (confirm('Are you sure to delete this record ?')) {
         row = td.parentElement.parentElement;
         document.getElementById("UserList").deleteRow(row.rowIndex);
         resetForm();
         
-    // }
 }
+
 function validate() {
     isValid = true;
     if (document.getElementById("fullName").value == "") {
@@ -96,22 +95,6 @@ function validate() {
     return isValid;
     
 }
-// function calculation() {
-    // var bmi= formData["Weight"] / formData["Height"] / formData["Height"] * 10000;
-//     var height=document.getElementById("Height").value;
-//     var weight=document.getElementById("Weight").value;
-//     var bmi=weight/(height*height)*10000;
-//     console.log(bmi);
-    
-// }
 
- 
-    // let bmi = formData["Weight"] / formData["Height"] / formData["Height"] * 10000;
-    
-    // let height=document.getElementById("Height").value;
-    // let weight=document.getElementById("Weight").value;
-    // // let bmi = weight/height/height*10000
-    // let bmi=weight/(height*height);
-    // console.log(bmi);
     
 
