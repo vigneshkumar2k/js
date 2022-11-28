@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Html CRUD with Pure JavaScript
+    </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    <div>
+                        <label>Full Name*</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
+                        <input type="text" name="fullName" id="fullName">
+                    </div>
+                    <div>
+                        <label>Age</label>
+                        <input type="number" name="Age" id="Age">
+                    </div>
+                    <div>
+                        <label>Height</label>
+                        <input type="text" name="Height" id="Height">
+                    </div>
+                    <div>
+                        <label>Weight</label>
+                        <input type="text" name="Weight" id="Weight">
+                    </div>
+                    <!-- <div>
+                        <label>BMI</label>
+                        <input type="text" name="Bmi" id="Bmi">
+                    </div> -->
+                    <div  class="form-action-buttons">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </td>
+            <td>
+                <table class="list" id="UserList">
+                    <thead>
+                        <tr>
+                            <th>Full Name</th>
+                            <th>Age</th>
+                            <th>Height</th>
+                            <th>Weight</th>
+                            <th>BMI</th>
+                            <th>Edit/delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script src="script.js"></script>
+</body>
+
+</html>
