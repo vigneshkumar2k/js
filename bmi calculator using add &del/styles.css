@@ -21,8 +21,11 @@ td, th {
     text-align: left;
     padding: 8px;
 }
-tr:nth-child(even),table.list thead>tr {
+/* tr:nth-child(even),table.list thead>tr {
     background-color: #dddddd;
+} */
+th{
+    background-color: #dddddd;  
 }
 
 input[type=text], input[type=number] {
