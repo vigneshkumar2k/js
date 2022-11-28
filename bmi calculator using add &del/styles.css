@@ -1,12 +1,19 @@
-body > table{
-    width: 80%;
+body{
+    width: 100%;
+    height: 100%;
+}
+.card-header{
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    text-align: center;
 }
 
 table{
     border-collapse: collapse;
 }
-table.list{
-    width:100%;
+.list{
+    width:800px;
+    position: absolute;
+    margin-left: 615px;
 }
 
 td, th {
@@ -58,3 +65,11 @@ label.validation-error{
 .hide{
     display:none;
 }
+.form{
+    width: 450px;
+    height: 120px;
+    position: relative;
+    top: 90px;
+    left: 65px;
+}
+
