@@ -28,6 +28,7 @@ function insertNewRecord(data) {
     var weight=document.getElementById("Weight").value;
     var bmi=weight/(height*height)*10000;
     console.log(bmi);
+    // var bmi= formData["Weight"] / formData["Height"] / formData["Height"] * 10000;
 
 
     var table = document.getElementById("UserList").getElementsByTagName('tbody')[0];
@@ -54,6 +55,7 @@ function resetForm() {
     document.getElementById("Age").value = "";
     document.getElementById("Height").value = "";
     document.getElementById("Weight").value = "";
+    bmi = "";
     selectedRow = null;
 }
 
@@ -63,12 +65,14 @@ function onEdit(td) {
     document.getElementById("Age").value = selectedRow.cells[1].innerHTML;
     document.getElementById("Height").value = selectedRow.cells[2].innerHTML;
     document.getElementById("Weight").value = selectedRow.cells[3].innerHTML;
+    bmi = selectedRow.cells[4].innerHTML;
 }
 function updateRecord(formData) {
     selectedRow.cells[0].innerHTML = formData.fullName;
     selectedRow.cells[1].innerHTML = formData.Age;
     selectedRow.cells[2].innerHTML = formData.Height;
     selectedRow.cells[3].innerHTML = formData.Weight;
+    selectedRow.cells[4].innerHTML = bmi;
 }
 
 function onDelete(td) {
@@ -93,7 +97,7 @@ function validate() {
     
 }
 // function calculation() {
-//     // var bmi= formData["Weight"] / formData["Height"] / formData["Height"] * 10000;
+    // var bmi= formData["Weight"] / formData["Height"] / formData["Height"] * 10000;
 //     var height=document.getElementById("Height").value;
 //     var weight=document.getElementById("Weight").value;
 //     var bmi=weight/(height*height)*10000;
